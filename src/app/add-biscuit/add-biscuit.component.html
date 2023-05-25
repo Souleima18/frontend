@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Biscuit :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Biscuit</label>
+            <input type="text" [(ngModel)]="newBiscuit.idBiscuit" name="idBiscuit" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Biscuit</label>
+            <input type="text" [(ngModel)]="newBiscuit.nomBiscuit" name="nomBiscuit" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prix Biscuit</label>
+            <input type="number" [(ngModel)]="newBiscuit.prixBiscuit" name="prixBiscuit" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>goût</label>
+            <input type="text" [(ngModel)]="newBiscuit.gout" name="gout" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date Sortir</label>
+            <input type="date" [(ngModel)]="newBiscuit.dateSortir" name="dateSortir" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Marque</label>
+            <select class="form-control form-control-lg" id="idMarque" name="idMarque" [(ngModel)]="newIdMarque">
+                <option *ngFor="let ma of marques" [value]="ma.idMarque">{{ma.nomMarque}}</option>
+            </select>
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="addBiscuit()" class="btn btn-success">Ajouter</button>
+        </div>
+    </form>
+</div>

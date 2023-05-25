@@ -1,0 +1,40 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Biscuit :</h2>
+    </div>
+    <form >
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Biscuit</label>
+    <input readonly type="text" [(ngModel)]="currentBiscuit.idBiscuit" name="idBiscuit" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Biscuit</label>
+    <input type="text"[(ngModel)]= "currentBiscuit.nomBiscuit"name="nomBiscuit" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix Biscuit</label>
+    <input type="number" [(ngModel)]= "currentBiscuit.prixBiscuit" name="prixBiscuit" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >goût </label>
+        <input type="text"[(ngModel)]= "currentBiscuit.gout"name="gout" class="form-control">
+        </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date Sortir</label>
+    <input type="date" [ngModel]="currentBiscuit.dateSortir | date: 'yyyy-MM-dd'"
+(ngModelChange)=" currentBiscuit.dateSortir= $event" name="dateSortir"
+     class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <select class="form-control form-control-lg" id="idMarque" name="idMarque"
+        [(ngModel)]="updatedMarqueId">
+        <option *ngFor="let ma of marques" [value]="ma.idMarque" >
+        {{ma.nomMarque}}
+        </option>
+        </select>
+        </div>
+    <div class="mt-2">
+    <button type="submit" (click)="updateBiscuit()" class="btn btn-success">Modifer</button>
+    </div>
+    </form>
+    </div>
